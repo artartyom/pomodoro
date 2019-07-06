@@ -15,6 +15,7 @@ while [ "$1" != "" ]; do
 			;;
 		*)
 			help=1
+			;;
 	esac
 	shift
 done
