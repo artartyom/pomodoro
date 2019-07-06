@@ -1,7 +1,9 @@
 #!/bin/bash
 
-workdir=$(pwd)
-real_workdir=$(realpath $workdir)
+install_path="$(which pomodoro)"
+real_path=$(realpath "$install_path")
+real_workdir="$(dirname $real_path)"
+
 timer_work=$1
 timer_rest=$2
 
@@ -10,4 +12,4 @@ if [ "$timer_work" == "" ]; then
 	exit
 fi
 
-screen -dmS Pomodoro bash $real_workdir/start_timer.sh $real_workdir $timer_work $timer_rest
+screen -dmS Pomodoro bash "$real_workdir"/start_timer.sh "$real_workdir" $timer_work $timer_rest
