@@ -1,6 +1,6 @@
 ## Pomodoro
 
-`pomodoro --wt n [--rt m]`
+`pomodoro n [m]`
 
 ### Synopsis
 
@@ -18,4 +18,4 @@ sudo ln -l /path/to/repo/pomodoro.sh pomodoro
 
 ### Usage
 
-To start the timer: `pomodoro --wt n`, where n is the work interval in minutes. Optionally, specify `--rt m` where m is the rest interval in minutes.
+To start the timer run `pomodoro n`, where n is the work interval in minutes. Optionally, specify `m`, the rest interval in minutes.

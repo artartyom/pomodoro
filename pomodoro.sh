@@ -2,28 +2,11 @@
 
 workdir=$(pwd)
 real_workdir=$(realpath $workdir)
+timer_work=$1
+timer_rest=$2
 
-while [ "$1" != "" ]; do
-	case $1 in
-		--wt)
-			shift
-			timer_work=$1
-			;;
-		--rt)
-			shift
-			timer_rest=$1
-			;;
-		*)
-			help=1
-			;;
-	esac
-	shift
-done
-
-if [ "$timer_work" == "" -o "$help" == "1" ]; then
-	echo "Arguments:"
-	echo "	--wt	required	Work time in minutes"
-	echo "	--rt 	optional	Rest time in minutes"
+if [ "$timer_work" == "" ]; then
+	echo "Please specify timer duration!"
 	exit
 fi
 
