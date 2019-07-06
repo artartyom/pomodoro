@@ -28,5 +28,5 @@ bash ./pomodoro.sh n m
 
 ### Usage
 
-`pomodoro n`, where n is an int, starts a work timer of n minutes. the work interval in minutes.
+`pomodoro n`, where n is an int, starts a work timer of n minutes.
 `pomodoro n m`, where n and m are ints, starts a work timer of n minutes and a subsequent rest timer of m minutes.
