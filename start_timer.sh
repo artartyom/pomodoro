@@ -1,6 +1,6 @@
 #!/bin/bash
 
-real_workdir=$1
+real_workdir="$1"
 timer_work=$2
 timer_rest=$3
 
