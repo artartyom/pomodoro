@@ -2,7 +2,7 @@
 
 ### Synopsis
 
-`pomodoro n [m]`
+`pomodoro n [m]|stop`
 
 ### Description
 
