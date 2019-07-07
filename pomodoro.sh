@@ -12,7 +12,7 @@ if [ "$timer_work" == "" ]; then
 	exit
 elif [ "$timer_work" == "stop" ]; then
 	echo "Stopping all pomodoros."
-	for scrnum in $(screen -list | grep Pomodoro | awk -F '.' '{print $1}'); do
+	for scrnum in $(screen -list | grep Pomodoro-* | awk -F '.' '{print $1}'); do
 		screen -XS $scrnum quit
 	done
 	notify-send "All pomodoros stopped." "Restart pomodoros as needed." -i "$real_workdir/tomato.png"
@@ -31,4 +31,5 @@ if [ $? != 0 ]; then
 	exit
 fi
 
-screen -dmS Pomodoro bash "$real_workdir"/start_timer.sh "$real_workdir" $timer_work $timer_rest
+num_pomodoro=$(( $(screen -list | grep Pomodoro | wc -l)+1 ))
+screen -dmS Pomodoro-"$num_pomodoro"_"$timer_work" bash "$real_workdir"/start_timer.sh "$real_workdir" $timer_work $timer_rest
